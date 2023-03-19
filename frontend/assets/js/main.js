@@ -61,7 +61,10 @@ socket.on("disconnect", () => {
 });
 
 /**
- * @param objet e
+ * @param int posX
+ * @param int posY
+ * @param int shadowOffsetX
+ * @param int shadowOffsetY
  * @returns void
  */
 const draw = (posX, posY, shadowOffsetX, shadowOffsetY) => {
