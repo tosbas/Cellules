@@ -35,7 +35,13 @@ socket.on("connection", (e) => {
   clients = [];
   e.forEach((element) => {
     rect(element.x, element.y, element.id);
-    const client = { x: element.x, y: element.y, id: element.id, shadowOffsetX: element.shadowOffsetX, shadowOffsetY: element.shadowOffsetY };
+    const client = {
+      x: element.x,
+      y: element.y,
+      id: element.id,
+      shadowOffsetX: element.shadowOffsetX,
+      shadowOffsetY: element.shadowOffsetY,
+    };
     clients.push(client);
     console.log(client);
   });
@@ -94,18 +100,24 @@ const rect = (x, y, id, shadowOffsetX, shadowOffsetY) => {
 
 const anim = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  requestAnimationFrame(anim)
+  requestAnimationFrame(anim);
   clients.forEach((element) => {
-    rect(element.x, element.y, element.id, element.shadowOffsetX, element.shadowOffsetY);
+    rect(
+      element.x,
+      element.y,
+      element.id,
+      element.shadowOffsetX,
+      element.shadowOffsetY
+    );
   });
-}
+};
 
 anim();
 
 /**
  * Search client by id in array client
  * @param string id
- * @returns
+ * @returns index of Client
  */
 const searchIndexClient = (id) => {
   const indexClient = clients.findIndex((x) => x.id === id);
@@ -155,6 +167,6 @@ window.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("keyup", () => {
-  client.shadowOffsetX = 0, client.shadowOffsetY = 0;
+  (client.shadowOffsetX = 0), (client.shadowOffsetY = 0);
   socket.emit("draw", client);
 });

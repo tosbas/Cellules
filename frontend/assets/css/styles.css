@@ -1,20 +1,20 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
 
-h1{
-   position: fixed;
-   text-align: center;
-   top: 0;
-   width: 100%;
+h1 {
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
 }
 
-#canvas{
-    margin: auto;
-    background-color: black;
+#canvas {
+  margin: auto;
+  background-color: black;
 }

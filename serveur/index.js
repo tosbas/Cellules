@@ -25,9 +25,8 @@ class newPlayer {
 
 io.on("connection", (socket) => {
   console.log("nouvelle connection");
-    clients.push(new newPlayer(socket.id));
-    io.emit("connection", clients);
-
+  clients.push(new newPlayer(socket.id));
+  io.emit("connection", clients);
 
   socket.on("disconnect", (e) => {
     console.log("Déconnection");
