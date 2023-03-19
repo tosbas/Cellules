@@ -49,7 +49,7 @@ io.on("connection", (socket) => {
 /**
  * Search client by socket id in array clients
  * @param string id
- * @returns
+ * @returns index of Client
  */
 const searchIndexClient = (id) => {
   const indexClient = clients.findIndex((x) => x.id === id);
