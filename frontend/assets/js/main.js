@@ -21,11 +21,13 @@ let client = undefined;
 
 let posX = undefined;
 let posY = undefined;
-const rectWidth = 50;
-const rectHeight = 50;
+// const rectWidth = 50;
+// const rectHeight = 50;
 const speedMove = 5;
+const radius = 10;
 let shadowOffsetX = undefined;
 let shadowOffsetY = undefined;
+const shadowOffset = 10;
 const shadowBlur = 20;
 const shadowColor = "red";
 
@@ -94,7 +96,7 @@ const rect = (x, y, id, shadowOffsetX, shadowOffsetY) => {
   ctx.shadowOffsetY = shadowOffsetY;
   ctx.shadowBlur = shadowBlur;
   ctx.fillStyle = "white";
-  ctx.fillRect(x, y, rectWidth, rectHeight);
+  ctx.arc(x, y, radius, 0,  2 * Math.PI);
   ctx.fill();
 };
 
@@ -129,28 +131,27 @@ window.addEventListener("keydown", (e) => {
   const keycode = e.keyCode;
   switch (keycode) {
     case 39:
-      if (posX + rectWidth + speedMove >= canvas.width) {
+      if (posX + radius + speedMove >= canvas.width) {
         return;
       }
       posX += speedMove;
-      shadowOffsetX = -25;
+      shadowOffsetX = -shadowOffset;
       shadowOffsetY = 0;
       break;
-
     case 40:
-      if (posY + rectHeight + speedMove >= canvas.height) {
+      if (posY + radius + speedMove >= canvas.height) {
         return;
       }
       posY += speedMove;
       shadowOffsetX = 0;
-      shadowOffsetY = -25;
+      shadowOffsetY = -shadowOffset;
       break;
     case 37:
       if (posX - speedMove <= 0) {
         return;
       }
       posX -= speedMove;
-      shadowOffsetX = 25;
+      shadowOffsetX = shadowOffset;
       shadowOffsetY = 0;
       break;
     case 38:
@@ -159,7 +160,7 @@ window.addEventListener("keydown", (e) => {
       }
       posY -= speedMove;
       shadowOffsetX = 0;
-      shadowOffsetY = 25;
+      shadowOffsetY = shadowOffset;
       break;
   }
 
@@ -167,6 +168,7 @@ window.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("keyup", () => {
-  (client.shadowOffsetX = 0), (client.shadowOffsetY = 0);
+  client.shadowOffsetX = 0;
+  client.shadowOffsetY = 0;
   socket.emit("draw", client);
 });
