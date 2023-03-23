@@ -21,8 +21,8 @@ let client = undefined;
 
 let posX = undefined;
 let posY = undefined;
-// const rectWidth = 50;
-// const rectHeight = 50;
+// const arcWidth = 50;
+// const arcHeight = 50;
 const speedMove = 5;
 const radius = 10;
 let shadowOffsetX = undefined;
@@ -36,7 +36,7 @@ socket.on("connection", (e) => {
   document.querySelector("#name").innerHTML = socket.id;
   clients = [];
   e.forEach((element) => {
-    rect(element.x, element.y, element.id);
+    arc(element.x, element.y, element.id);
     const client = {
       x: element.x,
       y: element.y,
@@ -89,7 +89,7 @@ const draw = (posX, posY, shadowOffsetX, shadowOffsetY) => {
  * @param string id
  * @returns void
  */
-const rect = (x, y, id, shadowOffsetX, shadowOffsetY) => {
+const arc = (x, y, id, shadowOffsetX, shadowOffsetY) => {
   ctx.beginPath();
   ctx.shadowColor = shadowColor;
   ctx.shadowOffsetX = shadowOffsetX;
@@ -104,7 +104,7 @@ const anim = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   requestAnimationFrame(anim);
   clients.forEach((element) => {
-    rect(
+    arc(
       element.x,
       element.y,
       element.id,
