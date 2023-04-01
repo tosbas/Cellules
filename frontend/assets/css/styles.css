@@ -3,15 +3,25 @@ body {
   padding: 0;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
 }
 
 h1 {
-  position: fixed;
   text-align: center;
-  top: 0;
+}
+
+#buttonMove {
+  position: fixed;
   width: 100%;
+  color: red;
+}
+
+#container {
+  position: fixed;
+  bottom: 0;
+  background-color: red;
 }
 
 #canvas {
