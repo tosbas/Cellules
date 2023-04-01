@@ -57,7 +57,7 @@ const event4 = () => {
 //The client
 let client = undefined;
 
-//Global variable for position in x and y
+//Position in x and y
 let posX = undefined;
 let posY = undefined;
 
