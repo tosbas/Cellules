@@ -333,9 +333,9 @@ setInterval(() => {
   }
 }, 10);
 
-//Events when a key is pressed
+//Events when a key is released
 window.addEventListener("keyup", (e) => {
-  //Get the code of the key pressed
+  //Get the code of the key released
   const keyCode = e.keyCode;
   //Look for the index of the released key in the array "arrayTouch"
   const indexTouch = arrayTouch.findIndex((x) => x === keyCode);
