@@ -5,7 +5,6 @@ Jeu multijoueur avec Node.js (test)
 
 ```
 git clone https://github.com/tosbas/Cellules.git
-
 ```
 
 ## Installer les dépendances
