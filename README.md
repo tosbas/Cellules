@@ -21,7 +21,7 @@ Toujours dans le dossier "serveur" executer
 
 
 ```
-npx nodemon index.js
+npm run dev
 ```
 
 ou
