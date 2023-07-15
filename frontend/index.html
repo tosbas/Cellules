@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>Cellules</title>
-  </head>
-  <body>
-    <h1>hello world <span id="name"></span></h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <title>Cellules</title>
+</head>
+
+<body>
+  <h1>Cellules</h1>
+
+  <div id="game-area">
+
+    <div id="menu">
+      <div>
+        <p>Choisir votre camp</p>
+        <div class="team">
+          <button id="blue">Bleu</button>
+          <button id="red">Rouge</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="team-info">
+      <p>Team "Blue" : <span id="teamBlue">0</span></p>
+      <p>Team "Red" : <span id="teamRed">0</span></p>
+    </div>
+
+
+
     <canvas id="canvas"></canvas>
 
-    <script src="./socket.io/socket.io.js"></script>
-    <script src="./js/main.js"></script>
-  </body>
+  </div>
+
+  <script src="./socket.io/socket.io.js"></script>
+  <script src="./js/cellules_game.js"></script>
+</body>
+
 </html>
