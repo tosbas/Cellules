@@ -4,8 +4,8 @@
   "description": "Projet de jeu multijoueurs",
   "main": "index.js",
   "scripts": {
-    "test": "testouille",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon ./bin/www"
   },
   "author": "tosbas",
   "license": "ISC",
